@@ -1,0 +1,11 @@
+<div *ngIf="!editing">
+    {{TheGame.title}} - {{TheGame.year}} <span *ngIf="TheGame.console">(Console Game)</span>
+    <button (click)="editMode()">Edit</button><button (click)="deletePress()">Delete</button>
+</div>
+<div *ngIf="editing">
+    <input type="text" [(ngModel)]="newTitle">
+    <input type="number" [(ngModel)]="newYear">
+    <input type="checkbox" [(ngModel)]="newConsole">
+    <button (click)="saveChanges()">Save</button><button (click)="cancelEdit()">Cancel</button>
+
+</div>
